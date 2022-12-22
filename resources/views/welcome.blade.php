@@ -7,7 +7,7 @@
 
         <div class="flex items-center justify-center">
             <div class="flex flex-col justify-around">
-                <div class="space-y-6">
+                <div class="space-y-6" x-data ="{mystack: 1}">
                     <a href="{{ route('home') }}">
                         <x-logo class="w-auto h-16 mx-auto " />
                     </a>
@@ -21,25 +21,33 @@
                     https://laravel.com/img/logomark.min.svg --}}
                     <ul class="list-reset">
                         <li class="inline px-4">
-                            <a href="https://tailwindcss.com" class="font-medium  hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Tailwind CSS</a>
+                            <button href="https://tailwindcss.com" class="font-medium  hover:text-gray-500 dark:hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" :class="{ 'underline': mystack ===1 }" @click="mystack = 1">Tailwind CSS</button>
                         </li>
                        {{-- https://github.com/alpinejs/alpine --}}
                        <li class="inline px-4">
-                            <a href="https://alpinejs.dev/" class="font-medium  hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Alpine.js</a>
+                            <button href="https://alpinejs.dev/" class="font-medium  hover:text-gray-500 dark:hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" :class="{ 'underline': mystack ===2 }" @click="mystack = 2">Alpine.js</button>
                         </li>
                         <li class="inline px-4">
-                            <a href="https://laravel.com" class="font-medium  hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Laravel</a>
+                            <button href="https://laravel.com" class="font-medium  hover:text-gray-500 dark:hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" :class="{ 'underline': mystack ===3 }" @click="mystack = 3">Laravel</button>
                         </li>
                         <li class="inline px-4">
-                            <a href="https://laravel-livewire.com" class="font-medium  hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Livewire</a>
+                            <button href="https://laravel-livewire.com" class="font-medium  hover:text-gray-500 dark:hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150" :class="{ 'underline': mystack ===4 }" @click="mystack = 4">Livewire</button>
                         </li>
                     </ul>
+
+                    <div class="text-black dark:text-gray-400 text-center">&#8594 
+                        <a x-show ="mystack === 1" href="https://tailwindcss.com" target="_blank">https://tailwindcss.com</a>
+                        <a x-show ="mystack === 2" href="https://alpinejs.dev" target="_blank">https://alpinejs.dev</a>
+                        <a x-show ="mystack === 3" href="https://laravel.com" target="_blank">https://laravel.com</a>
+                        <a x-show ="mystack === 4" href="https://laravel-livewire.com" target="_blank">https://laravel-livewire.com</a>
+                    </div>
+                      
                 </div>
             </div>
         </div>
 
         <div class="flex justify-center pt-9 ">
-          <a href="/dall-e">@include('icons.dalle')</a> 
+          <a href="/dall-e" title="DALL-E">@include('icons.dalle')</a> 
 
           {{-- click w/ condition:
           x-on:click="return something !== null"  --}}

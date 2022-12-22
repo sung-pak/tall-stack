@@ -6,7 +6,8 @@
 
   @include('components.topnav')
   
-  <div class="columns-8 p-0 space-y-4 mt-0">
+  <h1 class="text-4xl mb-4">Dall-E</h1>
+  <div class="columns-8 p-0 space-y-4">
 
     @php
       $arr = [

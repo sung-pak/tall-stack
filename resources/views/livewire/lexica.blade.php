@@ -2,11 +2,14 @@
 
 @section('content')
 
-<div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8 bg-white dark:bg-zinc-800 dark:text-indigo-600">
 
+<div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8 bg-white dark:bg-zinc-800 dark:text-indigo-600">
+  
   @include('components.topnav')
   
-  <div class="columns-3 p-0 space-y-4 mt-20">
+  <h1 class="text-4xl mt-20 mb-4">Lexica</h1>
+
+  <div class="columns-3 p-0 space-y-4">
 
     @php
       $arr = [

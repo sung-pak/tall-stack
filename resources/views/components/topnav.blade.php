@@ -6,7 +6,7 @@
           <a class="inline float-left" href="/">
             <x-logo class="w-auto h-8" /></a> 
          {{-- @php ( dd(\Route::current()->getName())); --}}
-          @if(Request::is('lexica'))<a href="/dall-e" class="relative inline bottom-0.5">@include('icons.dalle')</a>@endif 
+          @if(Request::is('lexica'))<a href="/dall-e" class="relative inline bottom-0.5" title="DALL-E">@include('icons.dalle')</a>@endif 
           @if(Request::is('dall-e'))<a href="/lexica" class="relative inline bottom-1">@include('icons.lexica')</a>@endif
 
         @endif
