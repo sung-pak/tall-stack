@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8 bg-white dark:bg-zinc-800 dark:text-indigo-600">
+<div class="flex flex-col justify-center min-h-screen py-12 px-4 lg:p-0 bg-gray-50 sm:px-6 lg:px-8 bg-white dark:bg-zinc-800 dark:text-indigo-600">
   
   @include('components.topnav')
   

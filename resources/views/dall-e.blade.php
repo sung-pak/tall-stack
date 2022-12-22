@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="flex flex-col  min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8 bg-white dark:bg-zinc-800 dark:text-indigo-600">
+<div class="flex flex-col  min-h-screen py-12 px-4 lg:p-0 bg-gray-50 sm:px-6 lg:px-8 bg-white dark:bg-zinc-800 dark:text-indigo-600">
 
   @include('components.topnav')
   
@@ -60,12 +60,12 @@
     this was case sensitive, the new implementation searches in all LowerCase --}}
     <div class="block relative mt-20">
       <h1 class="text-4xl mb-4 inline-block">Dall-E</h1> 
-      <input x-model="search" placeholder="Search..." class="inline-block relative bottom-2 left-4 pl-1.5"/>
+      <input type="search" x-model="search" placeholder="Search..." class="inline-block relative bottom-2 left-4 pl-1.75 py-1 rounded-lg focus:outline-none focus:border-black focus:ring-0 placeholder:text-gray-400 dark:placeholder:text-indigo-600 dark:border-none dark:bg-neutral-400 "/>
     </div>
 
-    <div class="columns-8 p-0">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 ">
       <template x-for="(item, index) in filteredItems">
-        <img :src="item" :title="titleFromUrl(item)" class="mb-4 rounded-lg"/>
+        <img :src="item" :title="titleFromUrl(item)" class="rounded-lg"/>
       </template>
     </div>
 

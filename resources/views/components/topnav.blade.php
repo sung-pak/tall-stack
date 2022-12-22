@@ -1,4 +1,4 @@
-<div class="absolute top-0 right-0 mt-4 mr-4">
+<div class="absolute top-0 right-0 mt-4 px-2 mr-3 md:px-4 lg:mr-5">
   @if (Route::has('login'))
       <div class="space-x-4">
         @if(Request::is('/'))
