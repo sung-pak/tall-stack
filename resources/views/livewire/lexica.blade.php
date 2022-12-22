@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="flex flex-col justify-center min-h-screen py-12 bg-gray-50 sm:px-6 lg:px-8 bg-white dark:bg-zinc-800 dark:text-indigo-600">
   
   @include('components.topnav')
@@ -26,6 +25,13 @@
         ["url"=>"https://lexica-serve-encoded-images2.sharif.workers.dev/md/dbfa7742-5f60-4160-8300-d2339d1da76d"],
         ["url"=>"https://lexica-serve-encoded-images2.sharif.workers.dev/md/6491878d-6099-4359-aa0f-767b5dd1b308"],
         ["url"=>"https://lexica-serve-encoded-images2.sharif.workers.dev/md/6c0a07d1-fea8-4937-95f8-76900f924fbd"],
+        ["url"=>""],
+        ["url"=>""],
+        ["url"=>""],
+        ["url"=>""],
+        ["url"=>""],
+        ["url"=>""],
+        ["url"=>""],
         ["url"=>""],
       ];
     @endphp
