@@ -25,19 +25,18 @@
         ["url"=>"https://lexica-serve-encoded-images2.sharif.workers.dev/md/dbfa7742-5f60-4160-8300-d2339d1da76d"],
         ["url"=>"https://lexica-serve-encoded-images2.sharif.workers.dev/md/6491878d-6099-4359-aa0f-767b5dd1b308"],
         ["url"=>"https://lexica-serve-encoded-images2.sharif.workers.dev/md/6c0a07d1-fea8-4937-95f8-76900f924fbd"],
-        ["url"=>""],
-        ["url"=>""],
-        ["url"=>""],
-        ["url"=>""],
-        ["url"=>""],
-        ["url"=>""],
-        ["url"=>""],
-        ["url"=>""],
+        ["url"=>"https://lexica-serve-encoded-images2.sharif.workers.dev/md/aa2f0e84-6402-4b6d-bef6-9adf7f474bef"],
       ];
     @endphp
 
     @foreach ($arr as $item)
-        <img src="{{ $item['url'] }}" alt="">
+      @php
+      $url = $item['url'];
+      //$count = $loop->index + 1;
+      //$str = substr($url, strrpos($url, '/') + 1); // get string after last /
+      //$str = pathinfo($str, PATHINFO_FILENAME); // remove last . and after
+      @endphp
+        <img src="{{$url}}" alt="" />
     @endforeach
 
   </div>

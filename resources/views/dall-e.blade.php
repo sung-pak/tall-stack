@@ -29,7 +29,7 @@
       ["url"=>"https://cdn.openai.com/labs/images/A plush toy robot sitting against a yellow wall.webp?v=1"],
       ["url"=>"https://cdn.openai.com/labs/images/A computer from the 90s in the style of vaporwave.webp?v=1"],
       ["url"=>"https://cdn.openai.com/labs/images/A sunlit indoor lounge area with a pool with clear water and another pool with translucent pastel pink water, next to a big window, digital art.webp?v=1"],
-      ["url"=>"https://cdn.openai.com/labs/images/A pencil and watercolor drawing of a bright city in the future with flying cars.webp?v=1"],
+      ["url"=>"https://cdn.openai.com/labs/images/3D render of a pink balloon dog in a violet room.webp?v=1"],
       ["url"=>"https://cdn.openai.com/labs/images/A photograph of a sunflower with sunglasses on in the middle of the flower in a field on a bright sunny day.webp?v=1"],
       ["url"=>"https://cdn.openai.com/labs/images/A van Gogh style painting of an American football player.webp?v=1"]
     ];
@@ -46,42 +46,37 @@
       search: '',
       items: [{{$urlArr}}],
       get filteredItems() {
-          return this.items.filter(
-              i => i.includes(this.search)
-          )
+        return this.items.filter(ii => {
+          return titleFromUrl(ii.toLowerCase()).includes(this.search.toLowerCase());
+        });
       }
-    }"
-  >
-
+    }">
+    {{-- original: 
+      get filteredItems() {
+            return this.items.filter(
+                i => i.startsWith(this.search)
+            )
+        }
+    this was case sensitive, the new implementation searches in all LowerCase --}}
     <div class="block relative mt-20">
       <h1 class="text-4xl mb-4 inline-block">Dall-E</h1> 
       <input x-model="search" placeholder="Search..." class="inline-block relative bottom-2 left-4 pl-1.5"/>
     </div>
 
-    <div class="columns-8 p-0 ">
-
+    <div class="columns-8 p-0">
       <template x-for="(item, index) in filteredItems">
-        {{-- <script>console.log(item);</script> --}}
-        <img :src="item" :title="item" class="pt-4"/>
+        <img :src="item" :title="titleFromUrl(item)" class="mb-4 rounded-lg"/>
       </template>
-
-      {{-- <li x-text="item"></li> --}}
-      {{-- @foreach ($arr as $item)
-          @php
-            $count = $loop->index + 1;
-            $size = ''; //'h-64 w-64';
-            $url = $item['url'];
-            $str = substr($url, strrpos($url, '/') + 1); // get string after last /
-            $str = pathinfo($str, PATHINFO_FILENAME); // remove last . and after
-          @endphp
-          <img src="{{$url}}" title="{{$str}}" class="{{$size}}" >
-        @endforeach --}}
-        {{-- @if($count==1)
-            @php($size='h-96 w-96')
-          @endif --}}
-
     </div>
+
   </div>
 </div>
 
+<script>
+  const titleFromUrl = (v1)=>{
+    let vv = result = /[^/]*$/.exec(v1)[0]; // grab str after final /
+    vv = vv.substr(0, vv.lastIndexOf(".")); // knock off str after last .
+    return vv;
+  }
+</script>
 @endsection
