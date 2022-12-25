@@ -8,7 +8,7 @@
   
   <h1 class="text-4xl mt-20 mb-4">Lexica</h1>
 
-  <div class="columns-3 p-0 space-y-4">
+  <div class="columns-2 md:columns-3 lg:columns-4 xl:columns-5 2xl:columns-6 p-0 space-y-4">
 
     @php
       $arr = [
